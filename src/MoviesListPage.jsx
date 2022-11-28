@@ -9,6 +9,7 @@ export default function MoviesListPage({movies}){
                 movie = {movie} 
                 releaseDate = {movie.releaseDate}
                 posterPath = {movie.posterPath}
+                cast = {movie.cast}
                 /> 
             })}
         </div>

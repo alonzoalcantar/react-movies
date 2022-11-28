@@ -27,15 +27,18 @@ function App() {
           
           <Route 
           path = '/' 
-          element = {<MoviesListPage movies = {movies} />} />
+          element = {<MoviesListPage 
+          movies = {movies} />} />
 
           <Route
           path = '/movies/:movieName'
-          element = {<MoviesDetailsPage movies = {movies} />} />
+          element = {<MoviesDetailsPage 
+          movies = {movies} />} />
 
           <Route
            path = '/actors' 
-           element = {<ActorsListPage movies = {movies} />} />
+           element = {<ActorsListPage 
+           movies = {movies} />} />
         </Routes>
         </>
       ) : (
