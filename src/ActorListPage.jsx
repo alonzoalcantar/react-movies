@@ -1,5 +1,13 @@
-export default function ActorsListPage(){
+import ActorCard from "./ActorCard"
+
+export default function ActorsListPage({movies}){
     return(
-        <p>Actors List Page</p>
+        <div>
+            {movies.map((movie)=> {
+                return <ActorCard
+                movie = {movie}
+                cast = {movie.cast}/>
+            })}
+        </div>
     )
 }
