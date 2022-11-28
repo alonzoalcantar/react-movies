@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import {Route, Routes} from 'react-router-dom'
+import {movies} from './data'
 
 import Navbar from './Navbar';
 import SignInPage from './SignInPage';
@@ -26,15 +27,15 @@ function App() {
           
           <Route 
           path = '/' 
-          element = {<MoviesListPage />} />
+          element = {<MoviesListPage movies = {movies} />} />
 
           <Route
           path = '/movies/:movieName'
-          element = {<MoviesDetailsPage />} />
+          element = {<MoviesDetailsPage movies = {movies} />} />
 
           <Route
            path = '/actors' 
-           element = {<ActorsListPage  />} />
+           element = {<ActorsListPage movies = {movies} />} />
         </Routes>
         </>
       ) : (
