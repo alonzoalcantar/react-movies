@@ -1,9 +1,22 @@
-export default function ActorCard({movie, cast}) {
+import { act } from "@testing-library/react"
+
+
+
+export default function ActorCard({movie, cast, actors}) {
     
-    const castSet = new Set(cast)
+
+
+    const castSet = [new Set(actors)]
 
     const uniqueCastArray = Array.from(castSet)
     console.log(uniqueCastArray)
+
+    
+
+    
+
+
+
 
     return(
     <div class = 'actor-card'>
@@ -11,10 +24,23 @@ export default function ActorCard({movie, cast}) {
         
         
         <div class = 'actor-info'>
-            <h1>{uniqueCastArray}</h1>
+ 
+
+                    <div>{uniqueCastArray.map((actor) => (
+                        <h1>{actor}</h1>
+                    ))}
+                    </div>
+     
+         
+      
         </div>
 
 
 
     </div>
 )}
+
+
+
+
+
