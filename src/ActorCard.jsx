@@ -1,46 +1,15 @@
-import { act } from "@testing-library/react"
 
-
-
-export default function ActorCard({movie, cast, actors}) {
-    
-
-
-    const castSet = [new Set(actors)]
-
-    const uniqueCastArray = Array.from(castSet)
-    console.log(uniqueCastArray)
-
-    
-
-    
-
-
-
-
+export default function ActorCard({actor, index}) {
     return(
     <div class = 'actor-card'>
          
-        
+        <img src={`https://picsum.photos/id/${index}/200/200`} />
         
         <div class = 'actor-info'>
- 
-
-                    <div>{uniqueCastArray.map((actor) => (
-                        <h1>{actor}</h1>
-                    ))}
-                    </div>
-     
-         
-      
+            <div>
+             <h3>{actor}</h3>
+            </div>
         </div>
-
-
 
     </div>
 )}
-
-
-
-
-

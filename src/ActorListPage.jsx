@@ -1,30 +1,20 @@
-import ActorCard from "./ActorCard"
 
-import {movies} from './data'
-
-function createActorList(movies) {
-    let actorList = [];
-    movies.forEach((m) => {
-      m.cast.forEach((mc) => {
-        if (!actorList.includes(mc)) {
-          actorList.push(mc);
-        }
-      });
-    });
-    return actorList;
-  }
-  const actors = createActorList(movies);
-
+import ActorCard from './ActorCard';
 
 export default function ActorsListPage({movies}){
-    return(
-        <div>
-            {movies.map((movie)=> {
-                return <ActorCard
-                movie = {movie}
-                cast = {movie.cast}
-                actors = {actors}/>
-            })}
-        </div>
-    )
-}
+        const actorList = []
+        movies.map((movie) => {
+            actorList.push(...movie.cast)
+        })
+        const actorSet = new Set(actorList)
+        const actorArray = Array.from(actorSet)
+            return ( 
+            <>
+            <h1>Actors List Page</h1>
+            {actorArray.map((actor, index) => 
+            <ActorCard 
+            actor={actor} 
+            index={index} />
+            )}
+            </>  
+       ) }
